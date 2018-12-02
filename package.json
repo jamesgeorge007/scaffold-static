@@ -1,0 +1,32 @@
+{
+  "name": "scaffold-cli",
+  "version": "1.0.0",
+  "description": "Start out building static websites powered by vanilla-js with this CLI tool",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "bin": "./index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesgeorge007/scaffold-cli.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamesgeorge007/scaffold-cli/issues"
+  },
+  "homepage": "https://github.com/jamesgeorge007/scaffold-cli#readme",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "clear": "^0.1.0",
+    "commander": "^2.19.0",
+    "elegant-spinner": "^1.0.1",
+    "figlet": "^1.2.1",
+    "log-update": "^2.3.0"
+  }
+}
