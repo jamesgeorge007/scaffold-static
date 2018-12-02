@@ -27,6 +27,7 @@
     "commander": "^2.19.0",
     "elegant-spinner": "^1.0.1",
     "figlet": "^1.2.1",
+    "inquirer": "^6.2.1",
     "log-update": "^2.3.0"
   }
 }
