@@ -1,5 +1,5 @@
-# scaffold-cli
-Start out building static websites powered by vanilla-js with this CLI tool
+# Scaffold-CLI
+Automate your local development environment and build static sites (vanilla-JS) with ease.
 
 ## License
 > GNU GPL V3
