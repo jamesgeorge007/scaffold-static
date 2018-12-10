@@ -7,13 +7,17 @@
     "lib": "lib"
   },
   "bin": "./index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jamesgeorge007/scaffold-cli.git"
   },
-  "keywords": [],
+  "keywords": [
+    "node.js",
+    "commander.js",
+    "inquirer.js",
+    "cli",
+],
   "author": "",
   "license": "ISC",
   "bugs": {
