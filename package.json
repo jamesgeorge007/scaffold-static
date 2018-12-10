@@ -1,6 +1,6 @@
 {
   "name": "scaffold-static",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Start out building static websites powered by vanilla-js with this CLI tool",
   "main": "index.js",
   "directories": {
@@ -13,13 +13,13 @@
     "url": "git+https://github.com/jamesgeorge007/scaffold-cli.git"
   },
   "keywords": [
-    "node.js",
-    "commander.js",
-    "inquirer.js",
-    "cli",
-],
-  "author": "",
-  "license": "ISC",
+  	"nodejs",
+  	"cli",
+  	"inquirer.js",
+  	"commander.js"
+  ],
+  "author": "James George<jamesgeorge998001@gmail.com>",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/jamesgeorge007/scaffold-cli/issues"
   },
