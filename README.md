@@ -1,4 +1,4 @@
-# Scaffold-CLI
+# Scaffold-Static CLI
 Automate your local development environment and build static sites (vanilla-JS) with ease using this CLI tool.
 
 ## Installation
