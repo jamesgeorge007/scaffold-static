@@ -1,5 +1,5 @@
 {
-  "name": "scaffold-cli",
+  "name": "scaffold-static",
   "version": "0.0.1",
   "description": "Start out building static websites powered by vanilla-js with this CLI tool",
   "main": "index.js",
