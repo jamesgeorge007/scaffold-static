@@ -13,10 +13,10 @@
     "url": "git+https://github.com/jamesgeorge007/scaffold-cli.git"
   },
   "keywords": [
-  	"nodejs",
-  	"cli",
-  	"inquirer.js",
-  	"commander.js"
+    "nodejs",
+    "cli",
+    "inquirer.js",
+    "commander.js"
   ],
   "author": "James George<jamesgeorge998001@gmail.com>",
   "license": "GPL-3.0",
@@ -34,5 +34,8 @@
     "log-update": "^2.3.0",
     "mkdirp": "^0.5.1",
     "opn": "^5.4.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.9.7"
   }
 }
