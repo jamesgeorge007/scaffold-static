@@ -10,5 +10,14 @@ Automate your local development environment and build static sites (vanilla-JS) 
 ## Usage
 Fire in `scaffold-static new <project_name>` to start out with a new static site.
 
+> Currently the following CSS frameworks are supported:-
+
+* Bootstrap-3
+* Bootstrap-4
+* Materialize css
+* Foudation css
+* Semantic-UI
+* Bulma css
+
 ## License
 > GNU GPL V3
