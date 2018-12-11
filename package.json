@@ -7,7 +7,8 @@
     "lib": "lib"
   },
   "bin": "./index.js",
-  "scripts": {},
+  "scripts": {	
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jamesgeorge007/scaffold-cli.git"
@@ -36,6 +37,7 @@
     "opn": "^5.4.0"
   },
   "devDependencies": {
-    "jshint": "^2.9.7"
+    "jshint": "^2.9.7",
+    "jslint": "^0.12.0"
   }
 }

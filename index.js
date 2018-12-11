@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-'use strict'
+'use strict';
 
 // Dependecies
-const program = require('commander')
+const program = require('commander');
 // Importing the function triggered on the corresponding command
 const versionInfo = require('./lib/commands/version');
 const scaffoldProj = require('./lib/commands/scaffold_project');
