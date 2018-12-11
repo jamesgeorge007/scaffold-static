@@ -10,7 +10,7 @@
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jamesgeorge007/scaffold-cli.git"
+    "url": "git+https://github.com/jamesgeorge007/scaffold-static.git"
   },
   "keywords": [
     "nodejs",
@@ -21,9 +21,9 @@
   "author": "James George<jamesgeorge998001@gmail.com>",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/jamesgeorge007/scaffold-cli/issues"
+    "url": "https://github.com/jamesgeorge007/scaffold-static/issues"
   },
-  "homepage": "https://github.com/jamesgeorge007/scaffold-cli#readme",
+  "homepage": "https://github.com/jamesgeorge007/scaffold-static#readme",
   "dependencies": {
     "chalk": "^2.4.1",
     "clear": "^0.1.0",
