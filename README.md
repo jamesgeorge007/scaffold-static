@@ -6,6 +6,9 @@
 # Scaffold-Static CLI
 Automate your local development environment and build static sites (vanilla-JS) with ease using this CLI tool.
 
+![capture](https://github.com/jamesgeorge007/scaffold-static/blob/master/assets/capture.JPG)
+
+
 ## Installation
 `npm install -g scaffold-static`
 
