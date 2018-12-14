@@ -17,7 +17,7 @@ Fire in `scaffold-static new <project_name>` to start out with a new static site
 
 > Currently the following CSS frameworks are supported:-
 
-* Bootstrap-3
+* [Bootstrap-3](https://getbootstrap.com/docs/3.3/)
 * Bootstrap-4
 * Materialize css
 * Foudation css
