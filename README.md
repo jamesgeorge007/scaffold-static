@@ -21,7 +21,7 @@ Fire in `scaffold-static new <project_name>` to start out with a new static site
 * [Bootstrap-4](https://getbootstrap.com/)
 * [Materialize css](https://materializecss.com/)
 * [Foudation css](https://foundation.zurb.com/)
-* Semantic-UI
+* [Semantic-UI](https://semantic-ui.com/)
 * Bulma css
 
 ## License
