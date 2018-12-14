@@ -22,7 +22,7 @@ Fire in `scaffold-static new <project_name>` to start out with a new static site
 * [Materialize css](https://materializecss.com/)
 * [Foudation css](https://foundation.zurb.com/)
 * [Semantic-UI](https://semantic-ui.com/)
-* Bulma css
+* [Bulma css](https://bulma.io/)
 
 ## License
 > GNU GPL V3
