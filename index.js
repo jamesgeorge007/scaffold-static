@@ -19,3 +19,7 @@ program
   .action(scaffoldProj);
 
 program.parse(process.argv);
+
+if(!program.args.length){
+	program.help();
+}
