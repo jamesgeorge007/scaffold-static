@@ -3,7 +3,9 @@
 
 // Dependecies
 const program = require('commander');
-// Importing the function triggered on the corresponding command
+const chalk = require('chalk');
+
+// Action handlers for corresponding commands
 const versionInfo = require('./lib/commands/version');
 const scaffoldProj = require('./lib/commands/scaffold_project');
 
