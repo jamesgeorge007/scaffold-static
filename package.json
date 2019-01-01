@@ -1,6 +1,6 @@
 {
   "name": "scaffold-static",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Start out building static websites powered by vanilla-js with this CLI tool",
   "main": "index.js",
   "directories": {
