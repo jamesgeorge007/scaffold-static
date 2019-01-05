@@ -12,15 +12,15 @@ Automate your local development environment and build static sites (vanilla-JS) 
 
 ## How it works
 
-> Choose your favourite framework to work upon.
+1. Choose your favourite CSS framework to work with.
 
 ![scaffold-static](https://i.imgur.com/8KnFcb8.jpg)
 
-> Generates the required boilerplate for you.
+2. Generates the required boilerplate for you.
 
 ![scaffold-static-console](https://i.imgur.com/xYUTBCe.jpg)
 
-> Shows up the template within your default browser.
+3. Shows up the template within your default browser.
 
 ![Template served](https://i.imgur.com/iNjkl9F.jpg)
 
