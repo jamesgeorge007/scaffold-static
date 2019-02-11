@@ -13,6 +13,10 @@
     "test": "node ./node_modules/mocha/bin/mocha test/main_test.js",
     "lint": "node ./node_modules/jshint/bin/jshint ./bin ./lib"
   },
+  "pre-commmit": [
+    "lint",
+    "test"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jamesgeorge007/scaffold-static.git"
@@ -40,6 +44,7 @@
   },
   "devDependencies": {
     "jshint": "^2.10.1",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "pre-commit": "^1.2.2"
   }
 }
