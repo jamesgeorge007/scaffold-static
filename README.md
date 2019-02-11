@@ -1,6 +1,6 @@
-[![NPM](https://nodei.co/npm/scaffold-static.png)](https://nodei.co/npm/scaffold-static/)
-
 [![Build Status](https://travis-ci.com/jamesgeorge007/scaffold-static.svg?branch=master)](https://travis-ci.com/jamesgeorge007/scaffold-static)
+[![npm version](https://badgen.net/npm/v/scaffold-static)](https://www.npmjs.com/package/scaffold-static)
+[![Downloads](https://badgen.net/npm/dm/scaffold-static)](https://www.npmjs.com/package/scaffold-static)
 [![PRs Welcome](https://img.shields.io/badge/PRs%20-welcome-brightgreen.svg)](http://github.com/jamesgeorge007/scaffold-static/pulls)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/jamesgeorge007/scaffold-static/blob/master/LICENSE)
 # Scaffold-Static CLI
