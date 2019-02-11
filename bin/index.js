@@ -6,8 +6,8 @@ const program = require('commander');
 const chalk = require('chalk');
 
 // Action handlers for corresponding commands
-const versionInfo = require('./lib/commands/version');
-const scaffoldProj = require('./lib/commands/scaffold_project');
+const versionInfo = require('../lib/commands/version');
+const scaffoldProj = require('../lib/commands/scaffold_project');
 
 // Define commands
 program

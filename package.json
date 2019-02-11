@@ -6,8 +6,12 @@
   "directories": {
     "lib": "lib"
   },
-  "bin": "./index.js",
-  "scripts": {},
+  "bin": {
+    "scaffold-static": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "node ./node_modules/mocha/bin/mocha test/main_test.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jamesgeorge007/scaffold-static.git"
@@ -36,6 +40,7 @@
     "opn": "^5.4.0"
   },
   "devDependencies": {
-    "jshint": "^2.9.7"
+    "jshint": "^2.9.7",
+    "mocha": "^5.2.0"
   }
 }
