@@ -10,7 +10,8 @@
     "scaffold-static": "./bin/index.js"
   },
   "scripts": {
-    "test": "node ./node_modules/mocha/bin/mocha test/main_test.js"
+    "test": "node ./node_modules/mocha/bin/mocha test/main_test.js",
+    "lint"  :"node ./node_modules/jshint/bin/jshint ./bin ./lib"
   },
   "repository": {
     "type": "git",
@@ -40,7 +41,7 @@
     "opn": "^5.4.0"
   },
   "devDependencies": {
-    "jshint": "^2.9.7",
+    "jshint": "^2.10.1",
     "mocha": "^5.2.0"
   }
 }
