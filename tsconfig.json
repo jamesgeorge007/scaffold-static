@@ -10,10 +10,10 @@
      "strict": true
     },
     "include": [
-      "src/**/*.ts"
+      "src/**/*",
+      "src/templates"
      ],
     "exclude": [
       "node_modules",
-      "firefunctions"
      ]
 }

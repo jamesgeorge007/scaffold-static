@@ -1,21 +1,23 @@
-'use strict';
+"use strict";
 
-import chalk from 'chalk';
-import * as clear from '../types/clear';
-import * as figlet from '../types/figlet';
+import chalk from "chalk";
+const clear = require("clear");
+const figlet = require("figlet");
 
-const { promisify } = require('util');
+import { promisify } from "util";
 const printTitle = promisify(figlet);
 
-exports.showBanner = async () => {
+const showBanner = async () => {
   clear();
 
   try {
-    const data = await printTitle('Scaffold-Static');
+    const data: any = await printTitle("Scaffold-Static", null);
     console.log(chalk.blueBright(data));
-    console.log(chalk.green(' static site generator for vanilla JS.'));
+    console.log(chalk.green(" static site generator for vanilla JS."));
   } catch (err) {
     console.log(err);
     process.exit(1);
   }
 };
+
+export default showBanner;

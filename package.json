@@ -2,18 +2,21 @@
   "name": "scaffold-static",
   "version": "1.0.2",
   "description": "Start out building static websites powered by vanilla-js with this CLI tool",
-  "main": "index.js",
+  "main": "bin/index.js",
   "files": [
-    "src"
+    "bin",
+    "lib"
   ],
   "bin": {
     "scaffold-static": "./bin/index.js"
   },
   "scripts": {
     "test": "node ./node_modules/mocha/bin/mocha test/main_test.js",
-    "build": "tsc",
-    "lint": "tslint ./bin ./src",
-    "lint:fix": "tslint --fix ./bin ./src"
+    "copy:files": "gulp copy",
+    "build": "npm run copy:files && tsc",
+    "lint": "tslint -c tslint.json src/**/*.ts",
+    "lint:fix": "tslint --fix -c tslint.json src/**/*.ts",
+    "tslint-check": "tslint-config-prettier-check ./tslint.json"
   },
   "husky": {
     "hooks": {
@@ -54,11 +57,13 @@
   "devDependencies": {
     "@types/inquirer": "^6.0.2",
     "@types/mkdirp": "^0.5.2",
+    "gulp": "^4.0.2",
     "husky": "^2.3.0",
     "lint-staged": "^8.1.7",
     "mocha": "^5.2.0",
     "prettier": "^1.17.1",
     "tslint": "^5.16.0",
-    "tslint-config-prettier": "^1.18.0"
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1"
   }
 }
