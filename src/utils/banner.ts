@@ -1,8 +1,8 @@
 'use strict';
 
-const clear = require('clear');
-const figlet = require('figlet');
-const chalk = require('chalk');
+import chalk from 'chalk';
+import * as clear from '../types/clear';
+import * as figlet from '../types/figlet';
 
 const { promisify } = require('util');
 const printTitle = promisify(figlet);

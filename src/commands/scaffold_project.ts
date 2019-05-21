@@ -1,13 +1,13 @@
 'use strict';
 
 const { showBanner } = require('../utils/banner');
-const inquirer = require('inquirer');
 
-const fs = require('fs');
-const chalk = require('chalk');
-const open = require('open');
-const mkdirp = require('mkdirp');
-const { execSync } = require('child_process');
+import chalk from 'chalk';
+import { execSync } from 'child_process';
+import * as fs from 'fs';
+import * as inquirer from 'inquirer';
+import * as mkdirp from 'mkdirp';
+import * as open from 'open';
 
 // Initial file content to be written to package.json.
 const fileContent = ['{', '"name": "",', '"dependencies": {', '}', '}'];
@@ -15,7 +15,7 @@ const fileContent = ['{', '"name": "",', '"dependencies": {', '}', '}'];
 // Setting path to the template files.
 const templatePath = `${__dirname}/../templates`;
 
-const serveTemplate = projectName => {
+const serveTemplate = (projectName: string) => {
   open(`${projectName}/index.html`);
   console.log(
     chalk.greenBright(
@@ -37,7 +37,7 @@ const serveTemplate = projectName => {
   );
 };
 
-exports.scaffoldProject = async projectName => {
+exports.scaffoldProject = async (projectName: string) => {
   await showBanner();
   // Taking in only the argument part
   const args = process.argv.slice(3);
