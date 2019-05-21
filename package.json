@@ -3,21 +3,27 @@
   "version": "1.0.2",
   "description": "Start out building static websites powered by vanilla-js with this CLI tool",
   "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
+  "files": [
+    "src"
+  ],
   "bin": {
     "scaffold-static": "./bin/index.js"
   },
   "scripts": {
     "test": "node ./node_modules/mocha/bin/mocha test/main_test.js",
-    "lint": "node ./node_modules/eslint/bin/eslint ./bin ./lib",
-    "lint:fix": "node ./node_modules/eslint/bin/eslint --fix ./bin ./lib"
+    "lint": "node ./node_modules/eslint/bin/eslint ./bin ./src",
+    "lint:fix": "node ./node_modules/eslint/bin/eslint --fix ./bin ./src"
   },
-  "pre-commmit": [
-    "lint",
-    "test"
-  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "src/*.{js}": "npm run lint:fix"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jamesgeorge007/scaffold-static.git"
@@ -47,8 +53,9 @@
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
     "eslint-plugin-prettier": "^3.1.0",
+    "husky": "^2.3.0",
+    "lint-staged": "^8.1.7",
     "mocha": "^5.2.0",
-    "pre-commit": "^1.2.2",
     "prettier": "^1.17.1"
   }
 }
