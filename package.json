@@ -41,7 +41,7 @@
     "figlet": "^1.2.1",
     "inquirer": "^6.2.1",
     "mkdirp": "^0.5.1",
-    "opn": "^5.4.0"
+    "open": "^6.3.0"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
