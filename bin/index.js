@@ -6,19 +6,15 @@ const program = require('commander');
 const chalk = require('chalk');
 
 // Action handlers for corresponding commands
-const versionInfo = require('../lib/commands/version');
-const scaffoldProj = require('../lib/commands/scaffold_project');
+const { scaffoldProject } = require('../lib/commands/scaffold_project');
 
 // Define commands
-program
- .command('version')
- .description('Shows current version of the tool')
- .action(versionInfo);
+program.version(require('../package').version).usage('<command> [options]');
 
 program
   .command('new <project_name>')
   .description('Creates a static site boilerplate to work on.')
-  .action(scaffoldProj);
+  .action(scaffoldProject);
 
 program
   .arguments('<command>')
