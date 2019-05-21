@@ -16,16 +16,14 @@ program
   .description('Creates a static site boilerplate to work on.')
   .action(scaffoldProject);
 
-program
-  .arguments('<command>')
-  .action((cmd) => {
-    program.outputHelp();
-    console.log(`  ` + chalk.red(`\n  Unknown command ${chalk.yellow(cmd)}.`));
-    console.log();
-});  
+program.arguments('<command>').action(cmd => {
+  program.outputHelp();
+  console.log(`  ` + chalk.red(`\n  Unknown command ${chalk.yellow(cmd)}.`));
+  console.log();
+});
 
 program.parse(process.argv);
 
-if(!program.args.length){
-	program.help();
+if (!program.args.length) {
+  program.help();
 }

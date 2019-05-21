@@ -11,7 +11,8 @@
   },
   "scripts": {
     "test": "node ./node_modules/mocha/bin/mocha test/main_test.js",
-    "lint": "node ./node_modules/jshint/bin/jshint ./bin ./lib"
+    "lint": "node ./node_modules/eslint/bin/eslint ./bin ./lib",
+    "lint:fix": "node ./node_modules/eslint/bin/eslint --fix ./bin ./lib"
   },
   "pre-commmit": [
     "lint",
@@ -43,8 +44,11 @@
     "opn": "^5.4.0"
   },
   "devDependencies": {
-    "jshint": "^2.10.1",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-prettier": "^3.1.0",
     "mocha": "^5.2.0",
-    "pre-commit": "^1.2.2"
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.17.1"
   }
 }
