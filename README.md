@@ -16,13 +16,13 @@
 
 ![scaffold-static](https://i.imgur.com/Ve7jLZV.png)
 
-* Generates the required boilerplate for you.
+* Generates the required boilerplate template for you.
 
 ![scaffold-static-console](https://i.imgur.com/4L4DoOc.png)
 
 * Shows up the template within your default browser.
 
-![Template served](https://i.imgur.com/WNzLFwq.png)
+![Template-served](https://i.imgur.com/WNzLFwq.png)
 
 
 ## Usage
