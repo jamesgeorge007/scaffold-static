@@ -13,7 +13,7 @@ program.version(require('../package').version).usage('<command> [options]');
 
 program
   .command('new <project_name>')
-  .description('Creates a static site boilerplate to work on.')
+  .description('Scaffolds a static site boilerplate template to work on.')
   .action(scaffoldProject);
 
 program.arguments('<command>').action(cmd => {
