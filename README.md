@@ -26,7 +26,7 @@
 
 
 ## Usage
-`scaffold-static new <project_name>` bootstraps the boilerplate template required to work on.
+`scaffold-static new <project_name>` bootstraps the boilerplate template required to work upon.
 
 > Currently the following CSS frameworks are supported:-
 
