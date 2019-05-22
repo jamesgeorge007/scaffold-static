@@ -4,7 +4,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs%20-welcome-brightgreen.svg)](http://github.com/jamesgeorge007/scaffold-static/pulls)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/jamesgeorge007/scaffold-static/blob/master/LICENSE)
 # Scaffold-Static CLI
-Automate your local development environment and build static sites (vanilla-JS) with ease using this CLI tool.
+`scaffold-static lets you automate the local development environment setup and build static sites (vanilla-JS) with ease.
 
 
 ## Installation
