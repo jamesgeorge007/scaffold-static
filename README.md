@@ -14,19 +14,19 @@
 
 * Choose your favourite CSS framework to work with.
 
-![scaffold-static](https://i.imgur.com/8KnFcb8.jpg)
+![scaffold-static](https://i.imgur.com/Ve7jLZV.png)
 
 * Generates the required boilerplate for you.
 
-![scaffold-static-console](https://i.imgur.com/xYUTBCe.jpg)
+![scaffold-static-console](https://i.imgur.com/4L4DoOc.png)
 
 * Shows up the template within your default browser.
 
-![Template served](https://i.imgur.com/iNjkl9F.jpg)
+![Template served](https://i.imgur.com/WNzLFwq.png)
 
 
 ## Usage
-Fire in `scaffold-static new <project_name>` to start out with a new static site.
+`scaffold-static new <project_name>` bootstraps the boilerplate template required to work on.
 
 > Currently the following CSS frameworks are supported:-
 
