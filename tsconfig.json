@@ -10,8 +10,7 @@
      "strict": true
     },
     "include": [
-      "src/**/*",
-      "src/templates"
+      "src/**/*"
      ],
     "exclude": [
       "node_modules",
