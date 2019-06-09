@@ -12,7 +12,7 @@
   },
   "scripts": {
     "test": "mocha test/index.js",
-    "build": "gulp copy && tsc",
+    "build": "gulp clean && tsc && gulp tasks",
     "lint": "tslint -c tslint.json src/**/*.ts",
     "lint:fix": "tslint --fix -c tslint.json src/**/*.ts",
     "tslint-check": "tslint-config-prettier-check ./tslint.json"
@@ -45,11 +45,10 @@
   "homepage": "https://github.com/jamesgeorge007/scaffold-static#readme",
   "dependencies": {
     "chalk": "^2.4.1",
-    "clear": "^0.1.0",
     "commander": "^2.19.0",
-    "figlet": "^1.2.1",
     "inquirer": "^6.2.1",
     "mkdirp": "^0.5.1",
+    "node-banner": "^1.2.2",
     "open": "^6.3.0"
   },
   "devDependencies": {

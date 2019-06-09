@@ -1,14 +1,11 @@
 #!/usr/bin/env node
 'use strict';
 
-// Dependecies
 const program = require('commander');
 const chalk = require('chalk');
 
-// Action handlers for corresponding commands
-const { scaffoldProject } = require('../lib/commands/scaffold');
+const scaffoldProject = require('../lib/commands/scaffold');
 
-// Define commands
 program.version(require('../package').version).usage('<command> [options]');
 
 program
