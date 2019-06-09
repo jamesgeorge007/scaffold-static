@@ -14,11 +14,11 @@
 
 * Choose your favourite CSS framework to work with.
 
-![scaffold-static](https://i.imgur.com/Ve7jLZV.png)
+![scaffold-static](https://i.imgur.com/eowZIAm.png)
 
 * Generates the required boilerplate template for you.
 
-![scaffold-static-console](https://i.imgur.com/4L4DoOc.png)
+![scaffold-static-console](https://i.imgur.com/vySKXvl.png)
 
 * Shows up the template within your default browser.
 
