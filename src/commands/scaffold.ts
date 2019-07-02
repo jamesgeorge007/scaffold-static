@@ -9,10 +9,21 @@ import showBanner = require("node-banner");
 import * as open from "open";
 
 // Initial file content to be written to package.json.
-const fileContent = ["{", '"name": "",', '"dependencies": {', "}", "}"];
+const fileContent: string[] = [
+  "{",
+  '"name": "",',
+  '"dependencies": {',
+  "}",
+  "}"
+];
 
 // Setting path to the template files.
-const templatePath = `${__dirname}/../templates`;
+const templatePath: string = `${__dirname}/../templates`;
+
+/**
+ * @param {String} projectName - Name of the project as supplied by the user
+ * @returns {void}
+ */
 
 const serveTemplate = (projectName: string) => {
   open(`${projectName}/index.html`);
@@ -38,6 +49,11 @@ const serveTemplate = (projectName: string) => {
     )
   );
 };
+
+/**
+ * @param {String} projectName - Name of the project as supplied by the user
+ * @returns {Promise<void>}
+ */
 
 const scaffoldProject = async (projectName: string) => {
   await showBanner("Scaffold Static", "scaffolding utility for vanilla-js");
