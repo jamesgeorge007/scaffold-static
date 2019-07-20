@@ -3,6 +3,11 @@
 [![Downloads](https://badgen.net/npm/dm/scaffold-static)](https://www.npmjs.com/package/scaffold-static)
 [![PRs Welcome](https://img.shields.io/badge/PRs%20-welcome-brightgreen.svg)](http://github.com/jamesgeorge007/scaffold-static/pulls)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/jamesgeorge007/scaffold-static/blob/master/LICENSE)
+
+<p align="center">
+	<a href='https://ko-fi.com/A0A1ZLKV' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+</p>
+
 # Scaffold-Static CLI
 `scaffold-static` lets you automate the local development environment setup and build static sites (vanilla-JS) with ease.
 
