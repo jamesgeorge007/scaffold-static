@@ -1,4 +1,9 @@
 <p align="center">
+	<img src="https://ph-files.imgix.net/b31bbad4-4498-401f-a3b1-0559f7e46149?auto=format&auto=compress&codec=mozjpeg&cs=strip&w=80&h=80&fit=crop">
+	<h1 align="center">Scaffold-Static</h1>
+</p>
+
+<p align="center">
 	<a href="https://travis-ci.com/jamesgeorge007/scaffold-static"><img src="https://travis-ci.com/jamesgeorge007/scaffold-static.svg?branch=master" alt="Build Status"/></a>
 	<a href="https://www.npmjs.com/package/scaffold-static"><img src="https://badgen.net/npm/v/scaffold-static" alt="npm version"/></a>
 	<a href="https://www.npmjs.com/package/scaffold-static"><img src="https://badgen.net/npm/dm/scaffold-static" alt="Downloads"/></a>
