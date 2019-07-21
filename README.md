@@ -7,7 +7,7 @@
 	<a href="https://travis-ci.com/jamesgeorge007/scaffold-static"><img src="https://travis-ci.com/jamesgeorge007/scaffold-static.svg?branch=master" alt="Build Status"/></a>
 	<a href="https://www.npmjs.com/package/scaffold-static"><img src="https://badgen.net/npm/v/scaffold-static" alt="npm version"/></a>
 	<a href="https://www.npmjs.com/package/scaffold-static"><img src="https://badgen.net/npm/dm/scaffold-static" alt="Downloads"/></a>
-	<a href="http://github.com/jamesgeorge007/scaffold-static/pulls"><img src="https://img.shields.io/badge/PRs%20-welcome-brightgreen.svg" alt="PRs Welcome"/></a>)
+	<a href="http://github.com/jamesgeorge007/scaffold-static/pulls"><img src="https://img.shields.io/badge/PRs%20-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 </p>
 
 <p align="center">
