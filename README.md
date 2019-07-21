@@ -1,8 +1,9 @@
-[![Build Status](https://travis-ci.com/jamesgeorge007/scaffold-static.svg?branch=master)](https://travis-ci.com/jamesgeorge007/scaffold-static)
-[![npm version](https://badgen.net/npm/v/scaffold-static)](https://www.npmjs.com/package/scaffold-static)
-[![Downloads](https://badgen.net/npm/dm/scaffold-static)](https://www.npmjs.com/package/scaffold-static)
-[![PRs Welcome](https://img.shields.io/badge/PRs%20-welcome-brightgreen.svg)](http://github.com/jamesgeorge007/scaffold-static/pulls)
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/jamesgeorge007/scaffold-static/blob/master/LICENSE)
+<p align="center">
+	<a href="https://travis-ci.com/jamesgeorge007/scaffold-static"><img src="https://travis-ci.com/jamesgeorge007/scaffold-static.svg?branch=master" alt="Build Status"/></a>
+	<a href="https://www.npmjs.com/package/scaffold-static"><img src="https://badgen.net/npm/v/scaffold-static" alt="npm version"/></a>
+	<a href="https://www.npmjs.com/package/scaffold-static"><img src="https://badgen.net/npm/dm/scaffold-static" alt="Downloads"/></a>
+	<a href="http://github.com/jamesgeorge007/scaffold-static/pulls"><img src="https://img.shields.io/badge/PRs%20-welcome-brightgreen.svg" alt="PRs Welcome"/></a>)
+</p>
 
 <p align="center">
 	<a href='https://ko-fi.com/A0A1ZLKV' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
