@@ -9,7 +9,7 @@
 	<a href="https://www.npmjs.com/package/scaffold-static"><img src="https://badgen.net/npm/dm/scaffold-static" alt="Downloads"/></a>
 	<a href="http://github.com/jamesgeorge007/scaffold-static/pulls"><img src="https://img.shields.io/badge/PRs%20-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 	<a href="https://dependabot.com/">
-	<img src="https://api.dependabot.com/badges/status?host=github&identifier=93163073" alt="Dependabot" width="336"></a>
+	<img src="https://api.dependabot.com/badges/status?host=github&identifier=93163073" alt="Dependabot" ></a>
 </p>
 
 <p align="center">
