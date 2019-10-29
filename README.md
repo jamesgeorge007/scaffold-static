@@ -1,7 +1,9 @@
 <p align="center">
-	<img src="https://ph-files.imgix.net/b31bbad4-4498-401f-a3b1-0559f7e46149?auto=format&auto=compress&codec=mozjpeg&cs=strip&w=80&h=80&fit=crop">
-	<h1 align="center">Scaffold-Static</h1>
+	<img src="/art/logo.png" width="400" height="92" alt="scaffold-static logo">
 </p>
+
+<br>
+<br>
 
 <p align="center">
 	<a href="https://travis-ci.com/jamesgeorge007/scaffold-static"><img src="https://travis-ci.com/jamesgeorge007/scaffold-static.svg?branch=master" alt="Build Status"/></a>
@@ -20,6 +22,7 @@
 
 ## Installation
 `npm install -g scaffold-static`
+
 
 ## How it works
 
@@ -48,5 +51,11 @@
 * [Semantic-UI](https://semantic-ui.com/)
 * [Bulma css](https://bulma.io/)
 
+
 ## License
 > GNU GPL V3
+
+
+## Credits
+- Created by [James George](https://twitter.com/james_madhacks)
+- Logo by [Caneco](https://twitter.com/caneco)
