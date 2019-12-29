@@ -43,7 +43,7 @@
 2. Fire in `npm link` to test everything works fine.
 3. Then use the command scaffold-static new <project_name> to bootstrap the boilerplate template required to work upon.
 4. This creates a new directory with the given name in the current path.
-5. On the adjoing screen select the css framework you want to work upon. 
+5. Now select the CSS framework of your choice.
 6. Make your life-changing changes.
 7. Commit and push your changes.
 8. Make a detailed pull request.
