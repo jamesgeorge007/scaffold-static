@@ -41,7 +41,7 @@
 ## How do I contribute?
 1. Fork and clone our repository.
 2. Fire in sudo npm link to test everything works fine.
-3. Then use the commend scaffold-static new <project_name> to bootstrap the boilerplate template required to work upon.
+3. Then use the command scaffold-static new <project_name> to bootstrap the boilerplate template required to work upon.
 4. This creates a new directory with the given name in the current path.
 5. On the adjoing screen select the css framework you want to work upon. 
 6. Make your life-changing changes.
