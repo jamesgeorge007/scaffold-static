@@ -23,20 +23,6 @@
 ## Installation
 `npm install -g scaffold-static`
 
-## How do I contribute?
-1. Fork and clone our repository.
-2. Fire in sudo npm link to test everything works fine.
-3. Then use the commend scaffold-static new <project_name> to bootstrap the boilerplate template required to work upon.
-4. This creates a new directory with the given name in the current path.
-5. On the adjoing screen select the css framework you want to work upon. 
-6. Make your life-changing changes.
-7. Commit and push your changes.
-8. Make a detailed pull request.
- npm link creates a symlink in the global folder making the`scaffold-static` command globally available within your local development environment
-
-## Why should I contribute?
-Contributing helps people and makes the world simply a better place, without contributors this project would cease to exist.
-
 
 ## How it works
 
@@ -51,6 +37,21 @@ Contributing helps people and makes the world simply a better place, without con
 * Shows up the template within your default browser.
 
 ![Template-served](https://i.imgur.com/WNzLFwq.png)
+
+## How do I contribute?
+1. Fork and clone our repository.
+2. Fire in sudo npm link to test everything works fine.
+3. Then use the commend scaffold-static new <project_name> to bootstrap the boilerplate template required to work upon.
+4. This creates a new directory with the given name in the current path.
+5. On the adjoing screen select the css framework you want to work upon. 
+6. Make your life-changing changes.
+7. Commit and push your changes.
+8. Make a detailed pull request.
+ npm link creates a symlink in the global folder making the`scaffold-static` command globally available within your local development environment
+
+
+## Why should I contribute?
+Contributing helps people and makes the world simply a better place, without contributors this project would cease to exist.
 
 
 ## Usage
