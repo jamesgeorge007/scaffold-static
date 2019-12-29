@@ -39,7 +39,7 @@
 ![Template-served](https://i.imgur.com/WNzLFwq.png)
 
 ## How do I contribute?
-1. Fork and clone our repository.
+1. Fork and clone the repository.
 2. Fire in `npm link` to test everything works fine.
 3. Then use the command scaffold-static new <project_name> to bootstrap the boilerplate template required to work upon.
 4. This creates a new directory with the given name in the current path.
