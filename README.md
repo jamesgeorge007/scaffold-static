@@ -42,6 +42,17 @@
 
 ![Template-served](https://i.imgur.com/WNzLFwq.png)
 
+
+> Currently the following CSS frameworks are supported:-
+
+* [Bootstrap-3](https://getbootstrap.com/docs/3.3/)
+* [Bootstrap-4](https://getbootstrap.com/)
+* [Materialize css](https://materializecss.com/)
+* [Foudation css](https://foundation.zurb.com/)
+* [Semantic-UI](https://semantic-ui.com/)
+* [Bulma css](https://bulma.io/)
+
+
 ## License
 > GNU GPL V3
 
