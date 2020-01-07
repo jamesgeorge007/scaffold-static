@@ -13,12 +13,3 @@
 ## Why should I contribute?
 Contributing helps people and makes the world simply a better place, without contributors this project would cease to exist.
 
-> Currently the following CSS frameworks are supported:-
-
-* [Bootstrap-3](https://getbootstrap.com/docs/3.3/)
-* [Bootstrap-4](https://getbootstrap.com/)
-* [Materialize css](https://materializecss.com/)
-* [Foudation css](https://foundation.zurb.com/)
-* [Semantic-UI](https://semantic-ui.com/)
-* [Bulma css](https://bulma.io/)
-
