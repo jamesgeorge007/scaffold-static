@@ -53,7 +53,7 @@
 * [Bulma css](https://bulma.io/)
 
 ## Contributing
-* Please see the [contributing guidelines](Contributing.md)
+  Please see the [contributing guidelines](Contributing.md)
 
 ## License
 > GNU GPL V3
