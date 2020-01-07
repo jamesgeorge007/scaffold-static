@@ -52,6 +52,8 @@
 * [Semantic-UI](https://semantic-ui.com/)
 * [Bulma css](https://bulma.io/)
 
+## Contributing
+  Please see the [contributing guidelines](Contributing.md)
 
 ## License
 > GNU GPL V3
