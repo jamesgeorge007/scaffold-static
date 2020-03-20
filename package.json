@@ -11,7 +11,6 @@
     "scaffold-static": "./bin/index.js"
   },
   "scripts": {
-    "test": "mocha test/index.js",
     "build": "gulp clean && tsc && gulp tasks",
     "lint": "tslint -c tslint.json src/**/*.ts",
     "lint:fix": "tslint --fix -c tslint.json src/**/*.ts",
@@ -57,7 +56,6 @@
     "gulp": "^4.0.2",
     "husky": "^2.3.0",
     "lint-staged": "^8.1.7",
-    "mocha": "^5.2.0",
     "prettier": "^1.17.1",
     "tslint": "^5.16.0",
     "tslint-config-prettier": "^1.18.0",
