@@ -25,7 +25,7 @@ const templatePath: string = `${__dirname}/../templates`;
  * @returns {void}
  */
 
-const serveTemplate = (projectName: string) => {
+const serveTemplate = (projectName: string): void => {
   open(`${projectName}/index.html`);
   console.log();
   console.log(
