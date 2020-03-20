@@ -32,15 +32,15 @@
 
 * Choose your favourite CSS framework to work with.
 
-![scaffold-static](https://i.imgur.com/eowZIAm.png)
+![scaffold-static](https://i.imgur.com/Hoto6BR.png)
 
 * Generates the required boilerplate template for you.
 
-![scaffold-static-console](https://i.imgur.com/vySKXvl.png)
+![scaffold-static-console](https://i.imgur.com/faiTinG.png)
 
 * Shows up the template within your default browser.
 
-![Template-served](https://i.imgur.com/WNzLFwq.png)
+![Template-served](https://i.imgur.com/eXCpehq.png)
 
 
 > Currently the following CSS frameworks are supported:-
