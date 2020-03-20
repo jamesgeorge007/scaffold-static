@@ -4,7 +4,7 @@
 const program = require('commander');
 const chalk = require('chalk');
 
-const scaffoldProject = require('../lib/commands/scaffold');
+const scaffoldProject = require('../lib/commands/scaffold').default;
 
 program.version(require('../package').version).usage('<command> [options]');
 

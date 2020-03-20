@@ -55,7 +55,7 @@ const serveTemplate = (projectName: string) => {
  * @returns {Promise<void>}
  */
 
-const scaffoldProject = async (projectName: string) => {
+export default async (projectName: string): Promise<void> => {
   await showBanner("Scaffold Static", "scaffolding utility for vanilla-js");
 
   // Taking in only the argument part.
@@ -115,5 +115,3 @@ const scaffoldProject = async (projectName: string) => {
   fs.writeFileSync(`${projectName}/index.html`, template);
   serveTemplate(projectName);
 };
-
-module.exports = scaffoldProject;
