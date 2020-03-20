@@ -1,9 +1,9 @@
 "use strict";
 
-import * as kleur from "kleur";
 import { execSync } from "child_process";
 import * as fs from "fs";
 import * as inquirer from "inquirer";
+import * as kleur from "kleur";
 import * as mkdirp from "mkdirp";
 import showBanner = require("node-banner");
 import * as open from "open";
@@ -29,12 +29,14 @@ const serveTemplate = (projectName: string): void => {
   open(`${projectName}/index.html`);
   console.log();
   console.log(
-    kleur.green().bold(
-      ` Generated the following files within ${require("path").join(
-        process.cwd(),
-        projectName
-      )}`
-    )
+    kleur
+      .green()
+      .bold(
+        ` Generated the following files within ${require("path").join(
+          process.cwd(),
+          projectName
+        )}`
+      )
   );
   console.log();
   console.log(
@@ -44,9 +46,13 @@ const serveTemplate = (projectName: string): void => {
   );
   console.log();
   console.log(
-    kleur.yellow().bold(
-      ` Serving ${kleur.red().dim("index.html")} within your default browser!!`
-    )
+    kleur
+      .yellow()
+      .bold(
+        ` Serving ${kleur
+          .red()
+          .dim("index.html")} within your default browser!!`
+      )
   );
 };
 
@@ -64,7 +70,9 @@ export default async (projectName: string): Promise<void> => {
   // Validating if multiple arguments are supplied or not.
   if (args.length > 1) {
     console.log(
-      kleur.red().bold(" Kindly provide only one argument as the project name!!")
+      kleur
+        .red()
+        .bold(" Kindly provide only one argument as the project name!!")
     );
     process.exit(1);
   }
