@@ -1,6 +1,6 @@
 "use strict";
 
-import chalk from "chalk";
+import * as kleur from "kleur";
 import { execSync } from "child_process";
 import * as fs from "fs";
 import * as inquirer from "inquirer";
@@ -29,7 +29,7 @@ const serveTemplate = (projectName: string): void => {
   open(`${projectName}/index.html`);
   console.log();
   console.log(
-    chalk.green.bold(
+    kleur.green().bold(
       ` Generated the following files within ${require("path").join(
         process.cwd(),
         projectName
@@ -38,14 +38,14 @@ const serveTemplate = (projectName: string): void => {
   );
   console.log();
   console.log(
-    chalk.cyan(
+    kleur.cyan(
       " 1.index.html\n 2.static/stylesheets/style.css\n 3.static/main.js"
     )
   );
   console.log();
   console.log(
-    chalk.yellow.bold(
-      ` Serving ${chalk.red.dim("index.html")} within your default browser!!`
+    kleur.yellow().bold(
+      ` Serving ${kleur.red().dim("index.html")} within your default browser!!`
     )
   );
 };
@@ -64,14 +64,14 @@ export default async (projectName: string): Promise<void> => {
   // Validating if multiple arguments are supplied or not.
   if (args.length > 1) {
     console.log(
-      chalk.red.bold(" Kindly provide only one argument as the project name!!")
+      kleur.red().bold(" Kindly provide only one argument as the project name!!")
     );
     process.exit(1);
   }
 
   if (fs.existsSync(projectName)) {
     console.log(
-      chalk.red.bold(` ${projectName} already exists within the path!!`)
+      kleur.red().bold(` ${projectName} already exists within the path!!`)
     );
     process.exit(1);
   }
