@@ -2,7 +2,7 @@
 'use strict';
 
 const program = require('commander');
-const chalk = require('chalk');
+const kleur = require('kleur');
 
 const scaffoldProject = require('../lib/commands/scaffold').default;
 
@@ -15,7 +15,7 @@ program
 
 program.arguments('<command>').action(cmd => {
   program.outputHelp();
-  console.log(`  ` + chalk.red(`\n  Unknown command ${chalk.yellow(cmd)}.`));
+  console.log(`  ` + kleur.red(`\n  Unknown command ${kleur.yellow(cmd)}.`));
   console.log();
 });
 
