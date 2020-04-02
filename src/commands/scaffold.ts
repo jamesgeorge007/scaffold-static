@@ -6,7 +6,6 @@ import * as inquirer from "inquirer";
 import * as kleur from "kleur";
 import * as mkdirp from "mkdirp";
 import showBanner = require("node-banner");
-import * as open from "open";
 
 // Initial file content to be written to package.json.
 const fileContent: string[] = [
@@ -19,42 +18,6 @@ const fileContent: string[] = [
 
 // Setting path to the template files.
 const templatePath: string = `${__dirname}/../templates`;
-
-/**
- * @param {String} projectName - Name of the project as supplied by the user
- * @returns {void}
- */
-
-const serveTemplate = (projectName: string): void => {
-  open(`${projectName}/index.html`);
-  console.log();
-  console.log(
-    kleur
-      .green()
-      .bold(
-        ` Generated the following files within ${require("path").join(
-          process.cwd(),
-          projectName
-        )}`
-      )
-  );
-  console.log();
-  console.log(
-    kleur.cyan(
-      " 1.index.html\n 2.static/stylesheets/style.css\n 3.static/main.js"
-    )
-  );
-  console.log();
-  console.log(
-    kleur
-      .yellow()
-      .bold(
-        ` Serving ${kleur
-          .red()
-          .dim("index.html")} within your default browser!!`
-      )
-  );
-};
 
 /**
  * @param {String} projectName - Name of the project as supplied by the user
@@ -121,5 +84,4 @@ export default async (projectName: string): Promise<void> => {
     "utf-8"
   );
   fs.writeFileSync(`${projectName}/index.html`, template);
-  serveTemplate(projectName);
 };
