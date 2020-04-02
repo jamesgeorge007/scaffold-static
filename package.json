@@ -22,9 +22,7 @@
     }
   },
   "lint-staged": {
-    "linters": {
-      "src/**/*.{js, ts}": "npm run lint:fix"
-    }
+    "src/**/*.{js, ts}": "npm run lint:fix"
   },
   "repository": {
     "type": "git",
@@ -56,7 +54,7 @@
     "@types/mkdirp": "^0.5.2",
     "gulp": "^4.0.2",
     "husky": "^2.3.0",
-    "lint-staged": "^8.1.7",
+    "lint-staged": "^10.1.1",
     "prettier": "^1.17.1",
     "tslint": "^5.16.0",
     "tslint-config-prettier": "^1.18.0",
