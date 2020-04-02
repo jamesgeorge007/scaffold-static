@@ -1,11 +1,12 @@
 "use strict";
 
-import { execSync } from "child_process";
+import * as execa from "execa";
 import * as fs from "fs";
 import * as inquirer from "inquirer";
 import * as kleur from "kleur";
 import * as mkdirp from "mkdirp";
 import showBanner = require("node-banner");
+import * as ora from "ora";
 
 // Initial file content to be written to package.json.
 const fileContent: string[] = [
@@ -46,7 +47,7 @@ export default async (projectName: string): Promise<void> => {
     );
     process.exit(1);
   }
-  execSync(`mkdir ${projectName}`);
+  execa.commandSync(`mkdir ${projectName}`);
 
   fileContent[1] = `"name": "${projectName}",`;
   fs.writeFileSync(`${projectName}/package.json`, fileContent.join("\n"));
@@ -84,4 +85,33 @@ export default async (projectName: string): Promise<void> => {
     "utf-8"
   );
   fs.writeFileSync(`${projectName}/index.html`, template);
+
+  // Navigate to the respective directory to execute shell commands
+  process.chdir(projectName);
+
+  // Instantiate the spinner the instance
+  const spinner = ora("Getting things ready").start();
+
+  // Generate package.json template
+  await execa.command("npm init -y");
+
+  // Installing required dependencies
+  spinner.text = "Installing dependencies";
+  await execa.command("npm install --save-dev webpack webpack-dev-server");
+
+  let pkgJson = JSON.parse(fs.readFileSync("./package.json").toString());
+
+  // Add build and serve scripts
+  pkgJson = {
+    ...pkgJson,
+    scripts: {
+      ...pkgJson.scripts,
+      build: "webpack",
+      serve: "webpack-dev-server --open"
+    }
+  };
+
+  const webpackConfig = fs.readFileSync(`${templatePath}/webpack.config.js`);
+  // Write back the config
+  fs.writeFileSync("webpack.config.js", webpackConfig);
 };
