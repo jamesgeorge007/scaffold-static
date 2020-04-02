@@ -101,7 +101,7 @@ export default async (projectName: string): Promise<void> => {
     }
   };
 
-  fs.writeFileSync("./package.json", JSON.stringify(pkgJson));
+  fs.writeFileSync("./package.json", JSON.stringify(pkgJson, null, 2));
 
   const webpackConfig = fs.readFileSync(`${templatePath}/webpack.config.js`);
   // Write back the config
