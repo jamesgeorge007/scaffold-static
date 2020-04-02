@@ -73,11 +73,11 @@ export default async (projectName: string): Promise<void> => {
 
   fs.writeFileSync(
     `${projectName}/css/style.css`,
-    "// Write your rulesets here!"
+    "/* Write your rulesets here! */"
   );
   fs.writeFileSync(
     `${projectName}/js/main.js`,
-    "// Any sorts of JavaScript code goes here!"
+    `require('../css/style.css');`
   );
 
   const template = fs.readFileSync(
@@ -97,7 +97,7 @@ export default async (projectName: string): Promise<void> => {
 
   // Installing required dependencies
   spinner.text = "Installing dependencies";
-  await execa.command("npm install --save-dev webpack webpack-dev-server");
+  await execa.command("npm install --save-dev webpack webpack-cli webpack-dev-server css-loader style-loader html-webpack-plugin");
 
   let pkgJson = JSON.parse(fs.readFileSync("./package.json").toString());
 
@@ -111,7 +111,14 @@ export default async (projectName: string): Promise<void> => {
     }
   };
 
+  fs.writeFileSync("./package.json", JSON.stringify(pkgJson));
+
   const webpackConfig = fs.readFileSync(`${templatePath}/webpack.config.js`);
   // Write back the config
   fs.writeFileSync("webpack.config.js", webpackConfig);
+  // Show success spinner
+  spinner.succeed(`You're all set`);
+
+  console.log(kleur.green().bold("Please follow these instructions:- "));
+  console.log(kleur.cyan().bold(`cd ${projectName} && npm run serve`));
 };

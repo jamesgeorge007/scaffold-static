@@ -8,7 +8,7 @@ gulp.task('clean', () => {
 
 gulp.task('copy', () => {
     return gulp
-        .src('./src/templates/**/*.html')
+        .src('./src/templates/**/*.{html,js}')
         .pipe(gulp.dest('./lib/templates'));
 });
 
