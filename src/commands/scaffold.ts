@@ -104,15 +104,15 @@ export default async (projectName: string): Promise<void> => {
       ]
     }
   ]);
-  mkdirp.sync(`${projectName}/static`);
-  mkdirp.sync(`${projectName}/static/stylesheets`);
+  mkdirp.sync(`${projectName}/css`);
+  mkdirp.sync(`${projectName}/js`);
 
   fs.writeFileSync(
-    `${projectName}/static/stylesheets/style.css`,
+    `${projectName}/css/style.css`,
     "// Write your rulesets here!"
   );
   fs.writeFileSync(
-    `${projectName}/static/main.js`,
+    `${projectName}/js/main.js`,
     "// Any sorts of JavaScript code goes here!"
   );
 
