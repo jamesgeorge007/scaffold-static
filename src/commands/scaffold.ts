@@ -8,15 +8,6 @@ import * as mkdirp from "mkdirp";
 import showBanner = require("node-banner");
 import * as ora from "ora";
 
-// Initial file content to be written to package.json.
-const fileContent: string[] = [
-  "{",
-  '"name": "",',
-  '"dependencies": {',
-  "}",
-  "}"
-];
-
 // Setting path to the template files.
 const templatePath: string = `${__dirname}/../templates`;
 
@@ -47,10 +38,6 @@ export default async (projectName: string): Promise<void> => {
     );
     process.exit(1);
   }
-  execa.commandSync(`mkdir ${projectName}`);
-
-  fileContent[1] = `"name": "${projectName}",`;
-  fs.writeFileSync(`${projectName}/package.json`, fileContent.join("\n"));
 
   const { frameworkOfChoice } = await inquirer.prompt([
     {
@@ -68,6 +55,9 @@ export default async (projectName: string): Promise<void> => {
       ]
     }
   ]);
+
+  execa.commandSync(`mkdir ${projectName}`);
+
   mkdirp.sync(`${projectName}/css`);
   mkdirp.sync(`${projectName}/js`);
 
@@ -89,20 +79,21 @@ export default async (projectName: string): Promise<void> => {
   // Instantiate the spinner the instance
   const spinner = ora("Getting things ready").start();
 
-  // Generate package.json template
-  await execa.command("npm init -y");
-
   // Installing required dependencies
   spinner.text = "Installing dependencies";
   await execa.command(
     "npm install --save-dev webpack webpack-cli webpack-dev-server css-loader style-loader html-webpack-plugin"
   );
 
+  // Generate package.json template
+  await execa.command("npm init -y");
+
   let pkgJson = JSON.parse(fs.readFileSync("./package.json").toString());
 
   // Add build and serve scripts
   pkgJson = {
     ...pkgJson,
+    name: projectName,
     scripts: {
       ...pkgJson.scripts,
       build: "webpack",
@@ -117,7 +108,9 @@ export default async (projectName: string): Promise<void> => {
   fs.writeFileSync("webpack.config.js", webpackConfig);
   // Show success spinner
   spinner.succeed(`You're all set`);
-
+  
+  // Logs
+  console.log();
   console.log(kleur.green().bold("Please follow these instructions:- "));
   console.log(kleur.cyan().bold(`cd ${projectName} && npm run serve`));
 };
