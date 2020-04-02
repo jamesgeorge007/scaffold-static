@@ -32,17 +32,6 @@
 
 * Choose your favourite CSS framework to work with.
 
-![scaffold-static](https://i.imgur.com/Hoto6BR.png)
-
-* Generates the required boilerplate template for you.
-
-![scaffold-static-console](https://i.imgur.com/faiTinG.png)
-
-* Shows up the template within your default browser.
-
-![Template-served](https://i.imgur.com/eXCpehq.png)
-
-
 > Currently the following CSS frameworks are supported:-
 
 * [Bootstrap-3](https://getbootstrap.com/docs/3.3/)
@@ -51,6 +40,16 @@
 * [Foudation css](https://foundation.zurb.com/)
 * [Semantic-UI](https://semantic-ui.com/)
 * [Bulma css](https://bulma.io/)
+
+* `scaffold-static` generates the bare minimum boilerplate template with necessary `webpack` configurations to build the project for production.
+
+  A `webpack.config.js` file is made available which depends on the following packages:-
+  - [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin): Simplifies creation of HTML files to serve your webpack bundles.
+  - [css-loader](https://github.com/webpack-contrib/css-loader) -  interprets `@import` and `url()` like `import/require()` and will resolve them.
+  - [style-loader](https://github.com/webpack-contrib/style-loader) - Injects CSS into the DOM.
+
+* Leverage the advantages put forward by `webpack-dev-server` such as [Hot Module Replacement](https://webpack.js.org/concepts/hot-module-replacement/) essentially adding it to the DX.
+
 
 ## Contributing
   Please see the [contributing guidelines](Contributing.md)
