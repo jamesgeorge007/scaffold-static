@@ -75,10 +75,7 @@ export default async (projectName: string): Promise<void> => {
     `${projectName}/css/style.css`,
     "/* Write your rulesets here! */"
   );
-  fs.writeFileSync(
-    `${projectName}/js/main.js`,
-    `require('../css/style.css');`
-  );
+  fs.writeFileSync(`${projectName}/js/main.js`, `require('../css/style.css');`);
 
   const template = fs.readFileSync(
     `${templatePath}/${frameworkOfChoice.toLowerCase()}/index.html`,
@@ -97,7 +94,9 @@ export default async (projectName: string): Promise<void> => {
 
   // Installing required dependencies
   spinner.text = "Installing dependencies";
-  await execa.command("npm install --save-dev webpack webpack-cli webpack-dev-server css-loader style-loader html-webpack-plugin");
+  await execa.command(
+    "npm install --save-dev webpack webpack-cli webpack-dev-server css-loader style-loader html-webpack-plugin"
+  );
 
   let pkgJson = JSON.parse(fs.readFileSync("./package.json").toString());
 
