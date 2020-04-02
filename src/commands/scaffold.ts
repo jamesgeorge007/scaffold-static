@@ -108,7 +108,7 @@ export default async (projectName: string): Promise<void> => {
   fs.writeFileSync("webpack.config.js", webpackConfig);
   // Show success spinner
   spinner.succeed(`You're all set`);
-  
+
   // Logs
   console.log();
   console.log(kleur.green().bold("Please follow these instructions:- "));
