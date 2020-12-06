@@ -12,9 +12,8 @@
   },
   "scripts": {
     "build": "gulp",
-    "lint": "tslint -c tslint.json src/**/*.ts",
-    "lint:fix": "tslint --fix -c tslint.json src/**/*.ts",
-    "tslint-check": "tslint-config-prettier-check ./tslint.json"
+    "lint": "eslint src",
+    "lint:fix": "eslint --fix src"
   },
   "husky": {
     "hooks": {
@@ -52,14 +51,17 @@
   "devDependencies": {
     "@types/inquirer": "^6.0.2",
     "@types/mkdirp": "^0.5.2",
+    "@typescript-eslint/eslint-plugin": "^4.9.0",
+    "@typescript-eslint/parser": "^4.9.0",
+    "babel-eslint": "^10.1.0",
     "del": "^5.1.0",
+    "eslint": "^7.15.0",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-plugin-prettier": "^3.2.0",
     "gulp": "^4.0.2",
     "husky": "^2.3.0",
     "lint-staged": "^10.1.1",
-    "prettier": "^1.17.1",
-    "tslint": "^5.16.0",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-plugin-prettier": "^2.0.1",
+    "prettier": "^1.19.1",
     "typescript": "^3.5.1"
   }
 }
