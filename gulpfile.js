@@ -1,9 +1,17 @@
-const gulp = require('gulp');
 const del = require('del');
-const tsc = require('typescript');
+const gulp = require('gulp');
+const { spawn } = require('child_process');
 
 gulp.task('clean', () => {
     return del('./lib/*', { force: true });
+});
+
+gulp.task('typescript', (cb) => {
+    const cmd = spawn('tsc', { stdio: 'inherit' });
+    cmd.on('close', (code) => {
+      console.log(`The process exited with code ${code}`);
+      cb(code);
+  });
 });
 
 gulp.task('copy', () => {
@@ -22,4 +30,4 @@ gulp.task('wrapup', () => {
     return del('./lib/scaffold.js');
 });
 
-gulp.task('tasks', gulp.series('copy', 'directory', 'wrapup'));
+gulp.task('default', gulp.series('clean', 'typescript', 'copy', 'directory', 'wrapup'));

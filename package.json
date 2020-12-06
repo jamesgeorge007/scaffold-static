@@ -11,7 +11,7 @@
     "scaffold-static": "./bin/index.js"
   },
   "scripts": {
-    "build": "gulp clean && tsc && gulp tasks",
+    "build": "gulp",
     "lint": "tslint -c tslint.json src/**/*.ts",
     "lint:fix": "tslint --fix -c tslint.json src/**/*.ts",
     "tslint-check": "tslint-config-prettier-check ./tslint.json"
