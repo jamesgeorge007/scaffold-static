@@ -3,33 +3,31 @@
 import * as execa from 'execa';
 import * as fs from 'fs';
 import * as inquirer from 'inquirer';
-import * as kleur from 'kleur';
-import * as mkdirp from 'mkdirp';
-import showBanner = require('node-banner');
 import * as ora from 'ora';
+import * as path from 'path';
+import showBanner = require('node-banner');
+
+import * as logger from '../utils/logger';
+import { hasYarn } from '../utils/validate';
 
 // Setting path to the template files.
-const templatePath = `${__dirname}/../templates`;
-
-/**
- * @param {String} projectName - Name of the project as supplied by the user
- * @returns {Promise<void>}
- */
+const templatePath = path.join(__dirname, '..', 'templates');
 
 export default async (projectName: string): Promise<void> => {
     await showBanner('Scaffold Static', 'scaffolding utility for vanilla-js');
+    console.log();
 
     // Taking in only the argument part.
     const args = process.argv.slice(3);
 
     // Validating if multiple arguments are supplied or not.
     if (args.length > 1) {
-        console.log(kleur.red().bold(' Kindly provide only one argument as the project name!!'));
+        logger.error(' Please provide only one argument as the project name');
         process.exit(1);
     }
 
     if (fs.existsSync(projectName)) {
-        console.log(kleur.red().bold(` ${projectName} already exists within the path!!`));
+        logger.error(` ${projectName} already exists in path`);
         process.exit(1);
     }
 
@@ -42,33 +40,45 @@ export default async (projectName: string): Promise<void> => {
         },
     ]);
 
-    execa.commandSync(`mkdir ${projectName}`);
+    // Create the project directory
+    fs.mkdirSync(projectName);
 
-    mkdirp.sync(`${projectName}/css`);
-    mkdirp.sync(`${projectName}/js`);
+    // Create css and js directory
+    const cssDirPath = path.join(projectName, 'css');
+    const jsDirPath = path.join(projectName, 'js');
 
-    fs.writeFileSync(`${projectName}/css/style.css`, '/* Write your rulesets here! */');
-    fs.writeFileSync(`${projectName}/js/main.js`, `require('../css/style.css');`);
+    fs.mkdirSync(cssDirPath);
+    fs.mkdirSync(jsDirPath);
 
-    const template = fs.readFileSync(`${templatePath}/${frameworkOfChoice.toLowerCase()}/index.html`, 'utf-8');
-    fs.writeFileSync(`${projectName}/index.html`, template);
+    fs.writeFileSync(path.join(cssDirPath, 'style.css'), '/* Write your rulesets here! */');
+    fs.writeFileSync(path.join(jsDirPath, 'main.js'), `require('../css/style.css');`);
 
-    // Navigate to the respective directory to execute shell commands
-    process.chdir(projectName);
+    // Create index.html with the boilerplate content
+    const template = fs.readFileSync(path.join(templatePath, frameworkOfChoice.toLowerCase(), 'index.html'), 'utf-8');
+    fs.writeFileSync(path.join(projectName, 'index.html'), template);
+
+    // Falls back to npm if yarn isn't available
+    const pm = hasYarn() ? 'yarn' : 'npm';
+    const installCmd = pm === 'yarn' ? 'add' : 'install';
+
+    // Dependencies to be installed
+    const deps = [
+        'webpack@webpack-4',
+        'webpack-cli@3',
+        'webpack-dev-server',
+        'css-loader',
+        'style-loader',
+        'html-webpack-plugin',
+    ];
 
     // Instantiate the spinner the instance
     const spinner = ora('Getting things ready').start();
 
     // Installing required dependencies
     spinner.text = 'Installing dependencies';
-    await execa.command(
-        'npm install --save-dev webpack webpack-cli webpack-dev-server css-loader style-loader html-webpack-plugin',
-    );
+    await execa.command(`${pm} ${installCmd} -D ${deps.join(' ')}`, { cwd: projectName });
 
-    // Generate package.json template
-    await execa.command('npm init -y');
-
-    let pkgJson = JSON.parse(fs.readFileSync('./package.json').toString());
+    let pkgJson = JSON.parse(fs.readFileSync(path.join(projectName, 'package.json')).toString());
 
     // Add build and serve scripts
     pkgJson = {
@@ -77,20 +87,21 @@ export default async (projectName: string): Promise<void> => {
         scripts: {
             ...pkgJson.scripts,
             build: 'webpack',
-            serve: 'webpack-dev-server --open',
+            serve: 'webpack serve --open',
         },
     };
 
-    fs.writeFileSync('./package.json', JSON.stringify(pkgJson, null, 2));
+    fs.writeFileSync(path.join(projectName, 'package.json'), JSON.stringify(pkgJson, null, 2));
 
-    const webpackConfig = fs.readFileSync(`${templatePath}/webpack.config.js`);
-    // Write back the config
-    fs.writeFileSync('webpack.config.js', webpackConfig);
+    // Create webpack config
+    const webpackConfig = fs.readFileSync(path.join(templatePath, 'webpack.config.js'));
+    fs.writeFileSync(path.join(projectName, 'webpack.config.js'), webpackConfig);
+
     // Show success spinner
     spinner.succeed(`You're all set`);
 
-    // Logs
+    // Instructions to the user
     console.log();
-    console.log(kleur.green().bold('Please follow these instructions:- '));
-    console.log(kleur.cyan().bold(`cd ${projectName} && npm run serve`));
+    logger.success('Please follow these instructions:- ');
+    logger.info(`cd ${projectName} && npm run serve`);
 };

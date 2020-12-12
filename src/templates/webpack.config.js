@@ -7,7 +7,7 @@ module.exports = {
     entry: './js/main.js',
     output: {
         filename: 'main.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist'),
     },
     devServer: {
         contentBase: './dist',
@@ -15,18 +15,22 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Template',
-            template: 'index.html'
+            template: 'index.html',
         }),
     ],
     module: {
         rules: [
             {
+                use: [
+                    {
+                        loader: 'style-loader',
+                    },
+                    {
+                        loader: 'css-loader',
+                    },
+                ],
                 test: /\.css$/,
-                loaders: [
-                    'style-loader',
-                    'css-loader'
-                ]
-            }
-        ]
-    }
-}
+            },
+        ],
+    },
+};
