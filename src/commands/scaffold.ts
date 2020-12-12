@@ -1,11 +1,11 @@
 'use strict';
 
-import * as execa from 'execa';
-import * as fs from 'fs';
-import * as inquirer from 'inquirer';
-import * as ora from 'ora';
-import * as path from 'path';
-import showBanner = require('node-banner');
+import execa from 'execa';
+import fs from 'fs';
+import inquirer from 'inquirer';
+import ora from 'ora';
+import path from 'path';
+import showBanner from 'node-banner';
 
 import * as logger from '../utils/logger';
 import { hasYarn } from '../utils/validate';

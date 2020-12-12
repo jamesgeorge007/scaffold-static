@@ -6,6 +6,7 @@
       ],
      "module": "commonjs",
      "outDir": "./lib",
+     "esModuleInterop": true,
      "sourceMap": false,
      "strict": true
     },
