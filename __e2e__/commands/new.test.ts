@@ -3,7 +3,7 @@ import path from 'path';
 
 import run from '../test-utils';
 
-jest.setTimeout(300000);
+jest.setTimeout(60000);
 
 const testDirPath = path.join(__dirname, 'test-app');
 
@@ -36,7 +36,7 @@ const deps = [
 ];
 
 describe('new command', () => {
-  it('creates a new project', async () => {
+  it('creates a new project based on the Bootstrap CSS framework', async () => {
     const { exitCode } = await run(['new', 'test-app'], {
       cwd: __dirname,
       input: '\n',
