@@ -51,7 +51,7 @@
 
 
 ## Contributing
-  Please see the [contributing guidelines](Contributing.md)
+  Please see the [contributing guidelines](.github/CONTRIBUTING.md)
 
 ## License
 > GNU GPL V3
