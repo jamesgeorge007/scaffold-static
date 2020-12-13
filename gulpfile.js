@@ -1,17 +1,14 @@
 const del = require('del');
+const execa = require('execa');
 const gulp = require('gulp');
-const { spawn } = require('child_process');
 
 gulp.task('clean', () => {
   return del('./lib/*', { force: true });
 });
 
-gulp.task('typescript', cb => {
-  const cmd = spawn('tsc', { stdio: 'inherit' });
-  cmd.on('close', code => {
-    console.log(`The process exited with code ${code}`);
-    cb(code);
-  });
+gulp.task('typescript', async () => {
+  const { exitCode } = await execa('tsc', { stdio: 'inherit' });
+  console.log(`The process exited with code ${exitCode}`);
 });
 
 gulp.task('copy', () => {
