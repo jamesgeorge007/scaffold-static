@@ -3,7 +3,7 @@ import path from 'path';
 
 import run from '../test-utils';
 
-jest.setTimeout(60000);
+jest.setTimeout(240000);
 
 const testDirPath = path.join(__dirname, 'test-app');
 
