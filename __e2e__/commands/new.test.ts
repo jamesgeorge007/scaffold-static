@@ -3,11 +3,11 @@ import path from 'path';
 
 import run from '../test-utils';
 
-jest.setTimeout(60000);
+jest.setTimeout(240000);
 
 const testDirPath = path.join(__dirname, 'test-app');
 
-beforeAll(() => {
+beforeEach(() => {
   if (fs.existsSync(testDirPath)) {
     fs.rmdirSync(testDirPath, { recursive: true });
   }
@@ -45,6 +45,37 @@ describe('new command', () => {
     // Assertions
     expect(exitCode).toBe(0);
     generatedFiles.forEach(file =>
+      expect(fs.existsSync(path.join(testDirPath, file))).toBeTruthy()
+    );
+
+    const pkgJson = JSON.parse(
+      fs.readFileSync(path.join(testDirPath, 'package.json'))
+    );
+
+    // Assertion for the installed dependencies
+    expect(pkgJson.dependencies).toBeFalsy();
+    deps.forEach(dep => expect(pkgJson.devDependencies[dep]).toBeTruthy());
+
+    // Assertion for the configured scripts
+    expect(pkgJson.name).toBe('test-app');
+    expect(pkgJson.scripts['build']).toBe('webpack');
+    expect(pkgJson.scripts['serve']).toBe('webpack-dev-server --open');
+  });
+
+  it('uses npm on supplying --use-npm', async () => {
+    const { exitCode } = await run(['new', 'test-app', '--use-npm'], {
+      cwd: __dirname,
+      input: '\n',
+    });
+
+    const generatedFilesWithNpm = [
+      ...generatedFiles.filter(file => file !== 'yarn.lock'),
+      'package-lock.json',
+    ];
+
+    // Assertions
+    expect(exitCode).toBe(0);
+    generatedFilesWithNpm.forEach(file =>
       expect(fs.existsSync(path.join(testDirPath, file))).toBeTruthy()
     );
 

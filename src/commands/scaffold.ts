@@ -1,5 +1,6 @@
 'use strict';
 
+import commander from 'commander';
 import execa from 'execa';
 import fs from 'fs';
 import inquirer from 'inquirer';
@@ -8,20 +9,22 @@ import path from 'path';
 import showBanner from 'node-banner';
 
 import * as logger from '../utils/logger';
-import { hasYarn } from '../utils/validate';
+import { getPackageManager } from '../utils/helpers';
 
 // Setting path to the template files.
 const templatePath = path.join(__dirname, '..', 'templates');
 
-export default async (projectName: string): Promise<void> => {
+export default async (
+  projectName: string,
+  args: commander.Command
+): Promise<void> => {
   await showBanner('Scaffold Static', 'scaffolding utility for vanilla-js');
   console.log();
 
-  // Taking in only the argument part.
-  const args = process.argv.slice(3);
+  const hasStrayArgs = process.argv[4] && !process.argv[4].startsWith('-');
 
-  // Validating if multiple arguments are supplied or not.
-  if (args.length > 1) {
+  // Do not accept multiple arguments for the project name
+  if (hasStrayArgs) {
     logger.error(' Please provide only one argument as the project name');
     process.exit(1);
   }
@@ -75,13 +78,13 @@ export default async (projectName: string): Promise<void> => {
   fs.writeFileSync(path.join(projectName, 'index.html'), template);
 
   // Falls back to npm if yarn isn't available
-  const pm = hasYarn() ? 'yarn' : 'npm';
+  const pm = getPackageManager(args.useNpm);
   const installCmd = pm === 'yarn' ? 'add' : 'install';
 
   // Dependencies to be installed
   const deps = [
-    'webpack@4',
-    'webpack-cli@3',
+    'webpack@^4.44.2',
+    'webpack-cli@^3.3.12',
     'webpack-dev-server',
     'css-loader',
     'style-loader',
@@ -130,5 +133,5 @@ export default async (projectName: string): Promise<void> => {
   // Instructions to the user
   console.log();
   logger.success('Please follow these instructions:- ');
-  logger.info(`cd ${projectName} && npm run serve`);
+  logger.info(`cd ${projectName} && ${pm} run serve`);
 };
