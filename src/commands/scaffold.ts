@@ -29,7 +29,14 @@ export default async (
     process.exit(1);
   }
 
-  if (fs.existsSync(projectName)) {
+  const isCurrentDir = projectName === '.';
+
+  if (isCurrentDir && fs.readdirSync('.').length) {
+    logger.error(` The current directory isn't empty`);
+    process.exit(1);
+  }
+
+  if (!isCurrentDir && fs.existsSync(projectName)) {
     logger.error(` ${projectName} already exists in path`);
     process.exit(1);
   }
@@ -52,7 +59,7 @@ export default async (
   ]);
 
   // Create the project directory
-  fs.mkdirSync(projectName);
+  !isCurrentDir && fs.mkdirSync(projectName);
 
   // Create css and js directory
   const cssDirPath = path.join(projectName, 'css');
@@ -108,13 +115,15 @@ export default async (
   // Add build and serve scripts
   pkgJson = {
     ...pkgJson,
-    name: projectName,
     scripts: {
-      ...pkgJson.scripts,
       build: 'webpack',
       serve: 'webpack-dev-server --open',
     },
   };
+
+  if (!isCurrentDir) {
+    pkgJson.name = projectName;
+  }
 
   fs.writeFileSync(
     path.join(projectName, 'package.json'),
@@ -133,5 +142,10 @@ export default async (
   // Instructions to the user
   console.log();
   logger.success('Please follow these instructions:- ');
-  logger.info(`cd ${projectName} && ${pm} run serve`);
+
+  let msg = `${pm} run serve`;
+  if (!isCurrentDir) {
+    msg = `cd ${projectName} && ${msg}`;
+  }
+  logger.info(msg);
 };

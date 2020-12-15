@@ -1,20 +1,18 @@
 import fs from 'fs';
 import path from 'path';
 
-import run from '../test-utils';
+import { rmTestDir, run } from '../test-utils';
 
 jest.setTimeout(240000);
 
 const testDirPath = path.join(__dirname, 'test-app');
 
 beforeEach(() => {
-  if (fs.existsSync(testDirPath)) {
-    fs.rmdirSync(testDirPath, { recursive: true });
-  }
+  rmTestDir(testDirPath);
 });
 
 afterAll(() => {
-  fs.rmdirSync(testDirPath, { recursive: true });
+  rmTestDir(testDirPath);
 });
 
 const generatedFiles = [
@@ -76,6 +74,38 @@ describe('new command', () => {
     // Assertions
     expect(exitCode).toBe(0);
     generatedFilesWithNpm.forEach(file =>
+      expect(fs.existsSync(path.join(testDirPath, file))).toBeTruthy()
+    );
+
+    const pkgJson = JSON.parse(
+      fs.readFileSync(path.join(testDirPath, 'package.json'))
+    );
+
+    // Assertion for the installed dependencies
+    expect(pkgJson.dependencies).toBeFalsy();
+    deps.forEach(dep => expect(pkgJson.devDependencies[dep]).toBeTruthy());
+
+    // Assertion for the configured scripts
+    expect(pkgJson.name).toBe('test-app');
+    expect(pkgJson.scripts['build']).toBe('webpack');
+    expect(pkgJson.scripts['serve']).toBe('webpack-dev-server --open');
+
+    // Remove test-app directory
+    rmTestDir(testDirPath);
+  });
+
+  it('creates a project in the current directory', async () => {
+    // Create test-app directory
+    fs.mkdirSync(testDirPath);
+
+    const { exitCode } = await run(['new', '.'], {
+      cwd: testDirPath,
+      input: '\n',
+    });
+
+    // Assertions
+    expect(exitCode).toBe(0);
+    generatedFiles.forEach(file =>
       expect(fs.existsSync(path.join(testDirPath, file))).toBeTruthy()
     );
 
