@@ -26,6 +26,8 @@
 ## Usage
 `scaffold-static new <project_name>`
 
+- Supply `--use-npm` to use `npm` as the package manager.
+
 
 ## How it works
 
