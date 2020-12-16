@@ -24,7 +24,16 @@
 
 
 ## Usage
-`scaffold-static new <project_name>`
+If you have installed `scaffold-static`  globally, 
+
+```sh
+scaffold-static new <project_name>
+```
+
+or, you could use it with `npx`
+```sh
+npx scaffold-static new <project_name>
+```
 
 - Supply `--use-npm` to use `npm` as the package manager.
 
