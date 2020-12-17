@@ -14,14 +14,10 @@ program
   .description('Scaffolds a static site boilerplate template to work on.')
   .action(scaffoldProject);
 
-program.arguments('<command>').action(cmd => {
+program.on('command:*', ([cmd]) => {
   program.outputHelp();
   console.log(`  ` + kleur.red(`\n  Unknown command ${kleur.yellow(cmd)}.`));
   console.log();
 });
 
 program.parse(process.argv);
-
-if (!program.args.length) {
-  program.help();
-}
