@@ -90,8 +90,8 @@ export default async (
 
   // Dependencies to be installed
   const deps = [
-    'webpack@^4.44.2',
-    'webpack-cli@^3.3.12',
+    'webpack',
+    'webpack-cli',
     'webpack-dev-server',
     'css-loader',
     'style-loader',
@@ -117,7 +117,7 @@ export default async (
     ...pkgJson,
     scripts: {
       build: 'webpack',
-      serve: 'webpack-dev-server --open',
+      serve: 'webpack serve',
     },
   };
 
