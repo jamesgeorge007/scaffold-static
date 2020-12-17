@@ -141,7 +141,7 @@ export default async (
 
   // Instructions to the user
   console.log();
-  logger.success('Please follow these instructions:- ');
+  logger.success('Now, type in:');
 
   let msg = `${pm} run serve`;
   if (!isCurrentDir) {
