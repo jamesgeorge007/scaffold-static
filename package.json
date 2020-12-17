@@ -42,7 +42,7 @@
   },
   "homepage": "https://github.com/jamesgeorge007/scaffold-static#readme",
   "dependencies": {
-    "commander": "^5.0.0",
+    "commander": "^6.2.1",
     "execa": "^4.0.0",
     "inquirer": "^6.2.1",
     "kleur": "^3.0.3",
