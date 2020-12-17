@@ -57,7 +57,7 @@ describe('new command', () => {
     // Assertion for the configured scripts
     expect(pkgJson.name).toBe('test-app');
     expect(pkgJson.scripts['build']).toBe('webpack');
-    expect(pkgJson.scripts['serve']).toBe('webpack-dev-server --open');
+    expect(pkgJson.scripts['serve']).toBe('webpack serve');
   });
 
   it('uses npm on supplying --use-npm', async () => {
@@ -88,7 +88,7 @@ describe('new command', () => {
     // Assertion for the configured scripts
     expect(pkgJson.name).toBe('test-app');
     expect(pkgJson.scripts['build']).toBe('webpack');
-    expect(pkgJson.scripts['serve']).toBe('webpack-dev-server --open');
+    expect(pkgJson.scripts['serve']).toBe('webpack serve');
 
     // Remove test-app directory
     rmTestDir(testDirPath);
@@ -120,6 +120,6 @@ describe('new command', () => {
     // Assertion for the configured scripts
     expect(pkgJson.name).toBe('test-app');
     expect(pkgJson.scripts['build']).toBe('webpack');
-    expect(pkgJson.scripts['serve']).toBe('webpack-dev-server --open');
+    expect(pkgJson.scripts['serve']).toBe('webpack serve');
   });
 });
