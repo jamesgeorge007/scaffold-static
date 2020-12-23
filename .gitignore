@@ -27,3 +27,6 @@ typings/
 
 # Test artifacts
 test-app
+
+# Coverage report
+coverage
