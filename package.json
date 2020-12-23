@@ -15,7 +15,9 @@
     "lint": "eslint __e2e__ src",
     "lint:fix": "eslint --fix __e2e__ src",
     "pretest": "yarn build && yarn lint",
-    "test": "jest"
+    "test": "jest",
+    "test:e2e": "jest __e2e__",
+    "test:unit": "jest src --coverage"
   },
   "husky": {
     "hooks": {

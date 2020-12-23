@@ -1,16 +1,13 @@
 {
-    "compilerOptions": {
-     "target": "es5",
-     "lib": [
-       "es2017","es2015","dom","es6"
-      ],
-     "module": "commonjs",
-     "outDir": "./lib",
-     "esModuleInterop": true,
-     "sourceMap": false,
-     "strict": true
-    },
-    "include": [
-      "src/**/*"
-     ]
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["es2017", "es2015", "dom", "es6"],
+    "module": "commonjs",
+    "outDir": "./lib",
+    "esModuleInterop": true,
+    "sourceMap": false,
+    "strict": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["src/**/__tests__"]
 }
